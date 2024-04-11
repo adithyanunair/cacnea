@@ -1,0 +1,73 @@
+<div class="grid lg:grid-cols-3 md:grid-cols-2 sm:ml-72 lg:ml-52">
+  @for (item of cartServices.getItems(); track item.id) {
+
+  <div class="text-white pb-24">
+    <div
+      class="w-1/2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-950 dark:border-gray-700"
+    >
+      <div class="flex justify-end px-4 pt-4">
+        <button
+          (click)="deleteFromCart(item)"
+          class="inline-block bg-white dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+          type="button"
+        >
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1 -32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1 -32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1 -32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.7 23.7 0 0 0 -21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0 -16-16z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col items-center pb-10">
+        <img
+          class="w-24 h-24 mb-3 shadow-lg"
+          src="{{ item.imageUrl }}"
+          alt="Bonnie image"
+        />
+        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+          {{ item.name }}
+        </h5>
+        <span class="text-sm text-gray-500 dark:text-gray-400"
+          >price: ${{ item.price }}</span
+        >
+        <p>Quality:{{ item.quantity }}</p>
+        <div class="flex mt-4 md:mt-6">
+
+
+            <button  (click)="cartServices.incrementQuantity(item.id)" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white rounded-lg  dark:bg-hexgreen dark:hover:bg-gray-700 dark:focus:ring-blue-800">+</button>
+          
+            <button (click)="cartServices.decrementQuantity(item.id)" class="py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">-</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>
+
+<div class="flex text-white justify-center items-center pt-5">
+
+
+<div class="w-full max-w-sm flex justify-center items-center dark:bg-gray-950 dark:border-gray-800 pt-6 pb-6 rounded-lg " >
+    <h2 class="font- titillium font-bold mr-10 text-lg " >Total: ${{cartServices.getTotal()}} </h2>
+
+
+    <div class=" ">
+        <button routerLink="/shop" 
+          class="flex items-center text-slateblack bg-white border-0 py-1 px-4 focus:outline-none hover:bg-hexgreen rounded-3xl font-titillium font-bold "
+        >
+          
+         BUY NOW
+        </button>
+    </div>
+</div>
+
+
+</div>
+
+

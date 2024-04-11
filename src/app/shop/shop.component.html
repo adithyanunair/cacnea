@@ -1,0 +1,157 @@
+
+<div class="pt-28 pb-56 sm:grid-cols-2  grid  md:grid-cols-2  lg:grid-cols-3">
+
+
+  @for (shop of shops; track shop.id) {
+<div class="shop">
+  <div class=" pt-28 pb-28 md:ml-36 sm:ml-24 sm:grid-cols-2  grid  md:grid-cols-2  lg:grid-cols-3 gap-y-32  justify-center items-center">
+    <article
+    class="relative w-44 h-52 bg-gradient-to-br to-hexgreen from-slateblack p-32 px-3 py-6 border-2 border-hexgreen rounded-lg"
+  >
+    <img
+      class="absolute top-[-4.5rem] left-0 right-0 w-48 mx-auto  hover:-translate-y-6"
+      alt="hero"
+      src="{{shop.imageUrl}}"
+    />
+    <h3 class="text-center text-white font-bold mt-24">
+  {{shop.name}}
+    </h3>
+    <span class="text-white font-bold"> ${{shop.price}}</span>
+
+    <button (click)="addToCart(shop)" class="bg-white rounded-lg ml-24">
+      <span class="material-symbols-outlined"> shopping_bag </span>
+    </button>
+  </article>
+</div>
+</div>
+
+  }
+</div>
+
+  <!-- <div
+    class=" pt-28 pb-40 lg:pl-48 sm:pl-32 md:pl-44 sm:grid-cols-2  grid  md:grid-cols-2  lg:grid-cols-3 gap-y-32  justify-center items-center "
+  >
+    
+    <article
+      class="relative w-44 h-52 bg-gradient-to-br to-hexgreen from-slateblack p-32 px-3 py-6 border-2 border-hexgreen rounded-lg"
+    >
+      <img
+        class="absolute top-[-4.5rem] left-0 right-0 w-48 mx-auto  hover:-translate-y-6"
+        alt="hero"
+        src="../assets/image/shop-cactus-2.png"
+      />
+      <h3 class="text-center text-white font-bold mt-24">
+    
+      </h3>
+      <span class="text-white font-bold"> $15</span>
+
+      <button class="bg-white rounded-lg ml-24">
+        <span class="material-symbols-outlined"> shopping_bag </span>
+      </button>
+    </article>
+    <article
+      class="relative w-44 h-52 bg-gradient-to-br to-hexgreen from-slateblack p-32 px-3 py-6 border-2 border-hexgreen rounded-lg "
+    >
+      <img
+        class="absolute top-[-4.5rem] left-0 right-0 w-48 mx-auto hover:-translate-y-6"
+        alt="hero"
+        src="../assets/image/shop-cactus-3.png"
+      />
+      <h3 class="text-center text-white font-bold mt-24">
+        
+      </h3>
+      <span class="text-white font-bold"> $15</span>
+
+      <button class="bg-white rounded-lg ml-24">
+        <span class="material-symbols-outlined"> shopping_bag </span>
+      </button>
+    </article>
+    <article
+      class="relative w-44 h-52 bg-gradient-to-br to-hexgreen from-slateblack p-32 px-3 py-6 border-2 border-hexgreen rounded-lg"
+    >
+      <img
+        class="absolute top-[-4.5rem] left-0 right-0 w-48 mx-auto hover:-translate-y-6"
+        alt="hero"
+        src="../assets/image/shop-cactus-4.png"
+      />
+      <h3 class="text-center text-white font-bold mt-24">
+    
+      </h3>
+      <span class="text-white font-bold"> $15</span>
+
+      <button class="bg-white rounded-lg ml-24">
+        <span class="material-symbols-outlined"> shopping_bag </span>
+      </button>
+    </article>
+    <article
+      class="relative w-44 h-52 bg-gradient-to-br to-hexgreen from-slateblack p-32 px-3 py-6 border-2 border-hexgreen rounded-lg"
+    >
+      <img
+        class="absolute top-[-4.5rem] left-0 right-0 w-48 mx-auto hover:-translate-y-6"
+        alt="hero"
+        src="../assets/image/shop-cactus-5.png"
+      />
+      <h3 class="text-center text-white font-bold mt-24">
+       
+      </h3>
+      <span class="text-white font-bold"> $15</span>
+
+      <button class="bg-white rounded-lg ml-24">
+        <span class="material-symbols-outlined"> shopping_bag </span>
+      </button>
+    </article>
+    <article
+      class="relative w-44 h-52 bg-gradient-to-br to-hexgreen from-slateblack p-32 px-3 py-6 border-2 border-hexgreen rounded-lg"
+    >
+      <img
+        class="absolute top-[-4.5rem] left-0 right-0 w-48 mx-auto hover:-translate-y-6"
+        alt="hero"
+        src="../assets/image/new-cactus-1.png"
+      />
+      <h3 class="text-center text-white font-bold mt-24">
+        Gymnocalcium <br />
+        Cactus
+      </h3>
+      <span class="text-white font-bold"> $15</span>
+
+      <button class="bg-white rounded-lg ml-24">
+        <span class="material-symbols-outlined"> shopping_bag </span>
+      </button>
+    </article>
+    <article
+    class="relative w-44 h-52 bg-gradient-to-br to-hexgreen from-slateblack p-32 px-3 py-6 border-2 border-hexgreen rounded-lg"
+  >
+    <img
+      class="absolute top-[-4.5rem] left-0 right-0 w-48 mx-auto hover:-translate-y-6"
+      alt="hero"
+      src="../assets/image/new-cactus-2.png"
+    />
+    <h3 class="text-center text-white font-bold mt-24">
+      Lily Pad <br />
+      Succulent
+    </h3>
+    <span class="text-white font-bold"> $15</span>
+
+    <button class="bg-white rounded-lg ml-24">
+      <span class="material-symbols-outlined"> shopping_bag </span>
+    </button>
+  </article>
+  <article
+  class="relative w-44 h-52 bg-gradient-to-br to-hexgreen from-slateblack p-32 px-3 py-6 border-2 border-hexgreen rounded-lg"
+>
+  <img
+    class="absolute top-[-4.5rem] left-0 right-0 w-48 mx-auto hover:-translate-y-6"
+    alt="hero"
+    src="../assets/image/new-cactus-1.png"
+  />
+  <h3 class="text-center text-white font-bold mt-24">
+    Gymnocalcium <br />
+    Cactus
+  </h3>
+  <span class="text-white font-bold"> $15</span>
+
+  <button class="bg-white rounded-lg ml-24">
+    <span class="material-symbols-outlined"> shopping_bag </span>
+  </button>
+</article>
+  </div> -->
